@@ -1,0 +1,353 @@
+/* =========================================================
+   Caell Store - layout: cabecalho, menu, rodape
+   ========================================================= */
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  backdrop-filter: blur(18px);
+  background: rgba(5, 7, 15, 0.72);
+  border-bottom: 1px solid var(--linha);
+  transition: background var(--transicao), border-color var(--transicao);
+}
+
+.cabecalho.solid {
+  background: rgba(5, 7, 15, 0.94);
+  border-bottom-color: var(--linha-forte);
+}
+
+.cabecalho-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  height: 74px;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.marca img {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px -8px rgba(124, 58, 237, 0.9);
+}
+
+.marca span small {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.navegacao {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: auto;
+}
+
+.navegacao a {
+  position: relative;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--texto-suave);
+  transition: color var(--transicao), background var(--transicao);
+}
+
+.navegacao a:hover {
+  color: var(--texto);
+  background: var(--superficie);
+}
+
+.navegacao a.ativo {
+  color: var(--texto);
+}
+
+.navegacao a.ativo::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0.2rem;
+  translate: -50% 0;
+  width: 18px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--gradiente);
+}
+
+.acoes-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.4rem;
+}
+
+.icone-botao {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid var(--linha);
+  background: var(--superficie);
+  color: var(--texto);
+  transition: var(--transicao);
+}
+
+.icone-botao:hover {
+  border-color: var(--linha-forte);
+  background: var(--superficie-2);
+  transform: translateY(-2px);
+}
+
+.contador {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 20px;
+  height: 20px;
+  padding-inline: 5px;
+  border-radius: 999px;
+  background: var(--gradiente);
+  color: #08080f;
+  font-size: 0.68rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--bg);
+}
+
+.menu-hamburguer {
+  display: none;
+  width: 44px;
+  height: 42px;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid var(--linha);
+  background: var(--superficie);
+}
+
+.menu-hamburguer span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--texto);
+  transition: var(--transicao);
+}
+
+.menu-hamburguer span + span {
+  margin-top: 4px;
+}
+
+.menu-hamburguer.aberto span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-hamburguer.aberto span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-hamburguer.aberto span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.menu-mobile {
+  display: none;
+  border-top: 1px solid var(--linha);
+  background: rgba(6, 9, 18, 0.98);
+  backdrop-filter: blur(20px);
+}
+
+.menu-mobile.aberto {
+  display: block;
+  animation: descer 0.3s ease;
+}
+
+@keyframes descer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.menu-mobile ul {
+  padding: 1rem 0 1.4rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.menu-mobile a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.2rem;
+  border-radius: 14px;
+  font-weight: 500;
+  color: var(--texto-suave);
+}
+
+.menu-mobile a:hover,
+.menu-mobile a.ativo {
+  background: var(--superficie);
+  color: var(--texto);
+}
+
+.menu-mobile .grupo-marcas {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 1.2rem 0;
+}
+
+.grupo-marcas a {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--linha);
+}
+
+/* ---------- rodape ---------- */
+
+.rodape {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(3rem, 8vw, 6rem);
+  border-top: 1px solid var(--linha);
+  background: linear-gradient(180deg, rgba(10, 13, 26, 0.6), rgba(4, 6, 12, 0.95));
+  padding-block: clamp(2.6rem, 6vw, 4.4rem) 2rem;
+}
+
+.rodape-grade {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.rodape-sobre p {
+  margin-top: 1rem;
+  max-width: 34ch;
+  font-size: 0.94rem;
+}
+
+.redes {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.redes a {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid var(--linha);
+  color: var(--texto-suave);
+  transition: var(--transicao);
+}
+
+.redes a:hover {
+  color: var(--texto);
+  border-color: transparent;
+  background: var(--gradiente);
+  transform: translateY(-3px);
+}
+
+.rodape h4 {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--texto);
+  margin-bottom: 1.1rem;
+}
+
+.rodape-links {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.rodape-links a {
+  color: var(--texto-suave);
+  font-size: 0.94rem;
+  transition: color var(--transicao), padding-left var(--transicao);
+}
+
+.rodape-links a:hover {
+  color: var(--texto);
+  padding-left: 6px;
+}
+
+.rodape-base {
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--linha);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: var(--texto-fraco);
+}
+
+.rodape-base strong {
+  color: var(--texto-suave);
+  font-weight: 600;
+}
+
+/* ---------- responsivo ---------- */
+
+@media (max-width: 940px) {
+  .navegacao {
+    display: none;
+  }
+
+  .menu-hamburguer {
+    display: grid;
+  }
+
+  .acoes-cabecalho {
+    margin-left: auto;
+  }
+
+  .rodape-grade {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: min(100% - 1.6rem, var(--largura));
+  }
+
+  .rodape-grade {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .cabecalho-conteudo {
+    height: 66px;
+  }
+
+  .marca img {
+    width: 34px;
+    height: 34px;
+  }
+}

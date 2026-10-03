@@ -1,0 +1,1066 @@
+/* =========================================================
+   Caell Store - ajustes para celular e telas pequenas
+   carregado por ultimo, entao sobrescreve os demais arquivos
+   ========================================================= */
+
+html,
+body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a,
+button,
+summary,
+input,
+select,
+textarea,
+.chip,
+.miniatura,
+.amostra {
+  touch-action: manipulation;
+}
+
+button,
+.chip {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ---------- telas medias ---------- */
+
+@media (max-width: 900px) {
+  .grade-produtos {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .botao {
+    padding: 0.9rem 1.4rem;
+  }
+
+  .linha-compra .botao {
+    min-width: 140px;
+  }
+}
+
+/* ---------- celulares e telas pequenas ---------- */
+
+@media (max-width: 620px) {
+  body {
+    font-size: 15px;
+    line-height: 1.58;
+  }
+
+  .container {
+    width: min(100% - 1.5rem, var(--largura));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .produto-nome,
+  .preco-valor {
+    overflow-wrap: anywhere;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 8vw, 2.2rem);
+    line-height: 1.16;
+  }
+
+  h2 {
+    font-size: clamp(1.35rem, 6.4vw, 1.8rem);
+  }
+
+  h3 {
+    font-size: 1.02rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .secao {
+    padding-block: 2.3rem;
+  }
+
+  .secao-cabecalho {
+    margin-bottom: 1.2rem;
+    gap: 0.9rem;
+  }
+
+  .secao-cabecalho .botao {
+    width: 100%;
+  }
+
+  .selo {
+    font-size: 0.64rem;
+    letter-spacing: 0.12em;
+    padding: 0.28rem 0.65rem;
+    margin-bottom: 0.7rem;
+  }
+
+  /* ---------- cabecalho ---------- */
+
+  .cabecalho-conteudo {
+    height: 60px;
+    gap: 0.5rem;
+  }
+
+  .marca {
+    gap: 0.55rem;
+    font-size: 1rem;
+    min-width: 0;
+  }
+
+  .marca img {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  .marca span small {
+    font-size: 0.54rem;
+    letter-spacing: 0.18em;
+  }
+
+  .acoes-cabecalho {
+    gap: 0.3rem;
+    margin-left: auto;
+  }
+
+  .icone-botao,
+  .menu-hamburguer {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .contador {
+    min-width: 18px;
+    height: 18px;
+    font-size: 0.6rem;
+    top: -4px;
+    right: -4px;
+    border-width: 2px;
+  }
+
+  .menu-mobile ul {
+    padding: 0.6rem 0 1rem;
+  }
+
+  .menu-mobile a {
+    padding: 0.95rem 1rem;
+    min-height: 48px;
+  }
+
+  .menu-mobile .grupo-marcas {
+    padding: 0.4rem 1rem 0.8rem;
+  }
+
+  .grupo-marcas a {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* ---------- botoes ---------- */
+
+  .botao {
+    padding: 0.8rem 1rem;
+    font-size: 0.88rem;
+    min-height: 46px;
+    gap: 0.45rem;
+  }
+
+  .botao svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  /* ---------- hero ---------- */
+
+  .hero {
+    padding-block: 1.8rem 2rem;
+  }
+
+  .hero::before {
+    top: -18%;
+    width: 150%;
+    height: 380px;
+    filter: blur(24px);
+  }
+
+  .hero-centro {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    margin-block: 0.7rem 0.8rem;
+    max-width: none;
+  }
+
+  .hero-texto {
+    font-size: 0.95rem;
+    max-width: 34ch;
+  }
+
+  .hero-acoes {
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1.4rem;
+    width: 100%;
+  }
+
+  .hero-confianca {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem 0.9rem;
+    margin-top: 1.6rem;
+    padding-top: 1.3rem;
+    text-align: left;
+  }
+
+  .hero-confianca div {
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.79rem;
+    line-height: 1.4;
+  }
+
+  .hero-confianca svg {
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+  }
+
+  .hero-marcas {
+    gap: 0.4rem;
+    margin-top: 1.4rem;
+  }
+
+  .hero-marcas > span {
+    width: 100%;
+    font-size: 0.78rem;
+  }
+
+  .hero-marca {
+    flex: 1;
+    justify-content: center;
+    padding: 0.5rem 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-marca span {
+    display: none;
+  }
+
+  .faixa-marcas {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1.6rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .faixa-marcas::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faixa-marcas span {
+    flex: 0 0 auto;
+    font-size: 1rem;
+  }
+
+  /* ---------- banner de lancamentos ---------- */
+
+  .banner-lancamentos-conteudo {
+    padding: 1.5rem 1.3rem;
+    gap: 0.8rem;
+    max-width: none;
+  }
+
+  .banner-lancamentos-conteudo h2 {
+    font-size: 1.4rem;
+  }
+
+  .banner-lancamentos-conteudo li {
+    font-size: 0.88rem;
+  }
+
+  /* ---------- cartoes de produto ---------- */
+
+  .grade-produtos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .produto {
+    border-radius: 18px;
+  }
+
+  .produto-imagem {
+    aspect-ratio: 1 / 1;
+  }
+
+  .produto-imagem img,
+  .produto-foto {
+    width: 86%;
+    height: 86%;
+  }
+
+  .produto:hover .produto-imagem img,
+  .produto:hover .produto-foto {
+    transform: none;
+  }
+
+  .produto-etiquetas {
+    top: 0.45rem;
+    left: 0.45rem;
+    gap: 0.25rem;
+    align-items: flex-start;
+  }
+
+  .etiqueta {
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+    padding: 0.22rem 0.45rem;
+  }
+
+  .produto-coracao {
+    top: 0.45rem;
+    right: 0.45rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  .produto-coracao svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .produto-acao {
+    display: none;
+  }
+
+  .produto-corpo {
+    padding: 0.65rem 0.65rem 0.8rem;
+    gap: 0.25rem;
+  }
+
+  .produto-marca {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+
+  .produto-nome {
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .produto-preco {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding-top: 0.55rem;
+  }
+
+  .preco-valor {
+    font-size: 1.02rem;
+  }
+
+  .preco-antigo {
+    font-size: 0.7rem;
+  }
+
+  .preco-parcelas {
+    font-size: 0.65rem;
+  }
+
+  .nota {
+    font-size: 0.7rem;
+  }
+
+  .desconto {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.35rem;
+  }
+
+  .estoque-baixo {
+    font-size: 0.66rem;
+  }
+
+  .produto-botoes {
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: 0.15rem;
+  }
+
+  .produto-botoes .botao {
+    width: 100%;
+    min-height: 40px;
+    padding: 0.55rem 0.4rem;
+    font-size: 0.74rem;
+    gap: 0.35rem;
+  }
+
+  .produto-botoes .botao svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* ---------- banners, marcas, stats, passos ---------- */
+
+  .grade-banner,
+  .grade-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .grade-marcas,
+  .grade-passos,
+  .grade-depoimentos,
+  .grade-equipe {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.85rem 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .banner-icone {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+  }
+
+  .banner-icone svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .banner strong {
+    font-size: 0.83rem;
+    line-height: 1.3;
+  }
+
+  .banner span {
+    font-size: 0.74rem;
+    line-height: 1.35;
+  }
+
+  .stat {
+    padding: 0.9rem 0.6rem;
+  }
+
+  .stat strong {
+    font-size: 1.5rem;
+  }
+
+  .stat span {
+    font-size: 0.76rem;
+  }
+
+  .marca-cartao {
+    padding: 1.1rem;
+    gap: 0.9rem;
+  }
+
+  .marca-icone {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+  }
+
+  .marca-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .passo {
+    padding: 1.2rem 1.1rem;
+  }
+
+  .passo::before {
+    font-size: 1.7rem;
+  }
+
+  .depoimento {
+    padding: 1.2rem;
+    gap: 0.8rem;
+  }
+
+  .depoimento-texto {
+    font-size: 0.92rem;
+  }
+
+  .equipe-cartao {
+    padding: 1.3rem 1.1rem;
+  }
+
+  .equipe-cartao img {
+    width: 76px;
+    height: 76px;
+  }
+
+  /* ---------- acordeao ---------- */
+
+  .acordeao-pergunta {
+    padding: 0.9rem 1rem;
+    font-size: 0.94rem;
+    min-height: 52px;
+    gap: 0.7rem;
+  }
+
+  .acordeao-resposta {
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* ---------- filtros ---------- */
+
+  .barra-filtros {
+    position: static;
+    padding: 0.6rem;
+    gap: 0.55rem;
+    border-radius: 18px;
+  }
+
+  .barra-filtros + .barra-filtros {
+    margin-top: 0.55rem;
+  }
+
+  .campo-busca {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .campo-busca input,
+  select.selecao {
+    font-size: 16px;
+    padding: 0.75rem 0.95rem;
+    border-radius: 14px;
+  }
+
+  .campo-busca input {
+    padding-left: 2.5rem;
+  }
+
+  select.selecao {
+    flex: 1;
+    min-width: 0;
+    text-overflow: ellipsis;
+  }
+
+  .chips {
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 2px;
+  }
+
+  .chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chip {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.82rem;
+    min-height: 40px;
+  }
+
+  .resultado-contagem {
+    margin-block: 0.9rem;
+    font-size: 0.82rem;
+  }
+
+  /* ---------- cabecalho de pagina ---------- */
+
+  .pagina-cabecalho {
+    padding-block: 1.5rem 0.7rem;
+  }
+
+  .pagina-cabecalho h1 {
+    font-size: clamp(1.6rem, 7.2vw, 2.1rem);
+  }
+
+  .pagina-cabecalho p {
+    margin-top: 0.6rem;
+    font-size: 0.94rem;
+  }
+
+  .migalhas {
+    font-size: 0.76rem;
+    gap: 0.35rem;
+    margin-bottom: 0.8rem;
+  }
+
+  /* ---------- pagina do produto ---------- */
+
+  .produto-detalhe {
+    gap: 1.4rem;
+  }
+
+  .galeria {
+    max-width: none;
+    margin-inline: 0;
+    gap: 0.6rem;
+  }
+
+  .galeria-principal {
+    aspect-ratio: 1 / 1.06;
+    border-radius: 24px;
+    padding: 0.6rem;
+  }
+
+  .galeria-principal .galeria-foto {
+    width: 90%;
+    height: 90%;
+  }
+
+  .galeria-controle {
+    top: 0.6rem;
+    right: 0.6rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+    padding: 0.22rem 0.45rem;
+  }
+
+  .galeria-miniaturas {
+    gap: 0.45rem;
+  }
+
+  .miniatura {
+    padding: 0.25rem;
+    border-radius: 12px;
+  }
+
+  .miniatura span {
+    display: none;
+  }
+
+  .galeria-credito {
+    font-size: 0.68rem;
+    text-align: left;
+  }
+
+  .produto-info {
+    gap: 1rem;
+  }
+
+  .produto-info-topo {
+    gap: 0.5rem;
+  }
+
+  .produto-info h1 {
+    font-size: clamp(1.45rem, 6.6vw, 1.9rem);
+  }
+
+  .produto-resumo-grande {
+    font-size: 0.95rem;
+  }
+
+  .lista-destaques {
+    gap: 0.5rem;
+  }
+
+  .lista-destaques li {
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .grupo-cor {
+    gap: 0.5rem;
+  }
+
+  .amostra {
+    width: 38px;
+    height: 38px;
+  }
+
+  .bloco-compra {
+    padding: 1rem;
+    border-radius: 20px;
+    gap: 0.85rem;
+  }
+
+  .bloco-compra-preco {
+    gap: 0.5rem 0.7rem;
+  }
+
+  .bloco-compra-preco .preco-valor {
+    font-size: 1.7rem;
+  }
+
+  .linha-compra {
+    gap: 0.5rem;
+  }
+
+  .linha-compra .botao {
+    min-width: 100%;
+    min-height: 50px;
+  }
+
+  .info-rapida {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .info-rapida div {
+    padding: 0.7rem 0.75rem;
+  }
+
+  .info-rapida span {
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+  }
+
+  .info-rapida strong {
+    font-size: 0.83rem;
+    overflow-wrap: anywhere;
+  }
+
+  .lista-check li {
+    font-size: 0.9rem;
+  }
+
+  /* ---------- ficha tecnica ---------- */
+
+  .especificacoes {
+    gap: 0.7rem;
+  }
+
+  .spec-grupo {
+    border-radius: 18px;
+  }
+
+  .spec-grupo h3 {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.7rem;
+  }
+
+  .spec-linha {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.88rem;
+    gap: 0.15rem;
+  }
+
+  .spec-linha dt {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .spec-linha dd {
+    font-weight: 500;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---------- sobre e contato ---------- */
+
+  .grade-sobre,
+  .grade-contato,
+  .grade-equipe,
+  .dupla-campos {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .formulario {
+    padding: 1.1rem;
+    gap: 0.85rem;
+    border-radius: 18px;
+  }
+
+  .campo input,
+  .campo textarea,
+  .campo select {
+    font-size: 16px;
+    padding: 0.85rem 0.9rem;
+  }
+
+  .campo label {
+    font-size: 0.7rem;
+  }
+
+  .campo textarea {
+    min-height: 110px;
+  }
+
+  .contato-item {
+    padding: 0.85rem 0.9rem;
+    gap: 0.7rem;
+  }
+
+  .contato-item strong {
+    font-size: 0.9rem;
+  }
+
+  .contato-item span {
+    font-size: 0.84rem;
+    overflow-wrap: anywhere;
+  }
+
+  .mapa-ficticio {
+    padding: 1.1rem;
+  }
+
+  .creditos li {
+    font-size: 0.8rem;
+  }
+
+  /* ---------- 404 ---------- */
+
+  .pagina-erro {
+    padding-block: 3rem;
+  }
+
+  /* ---------- modal do whatsapp ---------- */
+
+  .whatsapp-fundo,
+  .comparacao-fundo {
+    padding: 0.75rem;
+    align-items: flex-end;
+  }
+
+  .whatsapp-painel,
+  .comparacao-painel {
+    border-radius: 24px 24px 16px 16px;
+    padding: 1rem;
+    max-height: 88dvh;
+    overflow-y: auto;
+  }
+
+  .whatsapp-topo {
+    padding: 0.85rem 0.9rem;
+    gap: 0.7rem;
+  }
+
+  .whatsapp-avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .whatsapp-topo strong {
+    font-size: 0.94rem;
+  }
+
+  .whatsapp-balao {
+    margin: 0.9rem 0.9rem 0.7rem;
+    padding: 0.75rem 0.85rem;
+  }
+
+  .whatsapp-texto {
+    font-size: 0.88rem;
+  }
+
+  .whatsapp-aviso {
+    padding: 0 0.9rem;
+    font-size: 0.82rem;
+    gap: 0.5rem;
+  }
+
+  .whatsapp-acoes {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.9rem 0.9rem 0.5rem;
+  }
+
+  .whatsapp-nota {
+    padding: 0 0.9rem 0.9rem;
+    font-size: 0.72rem;
+  }
+
+  /* ---------- comparacao ---------- */
+
+  .comparacao-topo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .comparacao-topo .botao {
+    width: 100%;
+  }
+
+  .comparacao-tabela {
+    margin-top: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .comparacao-tabela table {
+    font-size: 0.82rem;
+    min-width: 340px;
+  }
+
+  .comparacao-tabela th,
+  .comparacao-tabela td {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .comparacao-tabela tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: #080b16;
+    font-size: 0.74rem;
+  }
+
+  /* ---------- aviso flutuante ---------- */
+
+  .aviso {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    max-width: none;
+    padding: 0.8rem 0.9rem;
+    gap: 0.6rem;
+  }
+
+  .aviso strong {
+    font-size: 0.88rem;
+  }
+
+  .aviso span {
+    font-size: 0.78rem;
+  }
+
+  /* ---------- rodape ---------- */
+
+  .rodape {
+    margin-top: 2.5rem;
+    padding-block: 2.2rem 1.4rem;
+  }
+
+  .rodape-grade {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .rodape-sobre p {
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
+
+  .rodape h4 {
+    font-size: 0.7rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .rodape-links {
+    gap: 0.7rem;
+  }
+
+  .rodape-links a {
+    font-size: 0.9rem;
+  }
+
+  .redes a {
+    width: 42px;
+    height: 42px;
+  }
+
+  .rodape-base {
+    margin-top: 1.8rem;
+    padding-top: 1.2rem;
+    gap: 0.5rem;
+    font-size: 0.76rem;
+  }
+}
+
+/* ---------- celulares muito estreitos ---------- */
+
+@media (max-width: 380px) {
+  .container {
+    width: min(100% - 1.1rem, var(--largura));
+  }
+
+  .marca img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .marca span {
+    font-size: 0.94rem;
+  }
+
+  .marca span small {
+    display: none;
+  }
+
+  .icone-botao,
+  .menu-hamburguer {
+    width: 38px;
+    height: 38px;
+  }
+
+  .grade-produtos {
+    gap: 0.5rem;
+  }
+
+  .produto-corpo {
+    padding: 0.55rem 0.5rem 0.65rem;
+  }
+
+  .produto-nome {
+    font-size: 0.88rem;
+  }
+
+  .produto-botoes .botao {
+    font-size: 0.7rem;
+  }
+
+  .grade-banner,
+  .grade-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-confianca {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- celular deitado ---------- */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding-block: 1.2rem;
+  }
+
+  .hero-acoes {
+    margin-top: 1rem;
+  }
+
+  .whatsapp-fundo,
+  .comparacao-fundo {
+    align-items: flex-start;
+  }
+
+  .whatsapp-painel,
+  .comparacao-painel {
+    max-height: 92dvh;
+  }
+}
+
+/* ---------- area segura do iphone ---------- */
+
+@supports (padding: max(0px)) {
+  .cabecalho-conteudo {
+    padding-top: env(safe-area-inset-top);
+    min-height: calc(60px + env(safe-area-inset-top));
+  }
+
+  .rodape-base {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
